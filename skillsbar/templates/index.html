@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br> 
+    <h3> Welcome to <span class="text-primary">Skills Bar!</span></h2>
+    <h4 class="text-primary">
+     Would you like to see a graph of your programming languages skills?
+    </h4>
+
+    <p >
+        Click on a link below to see the plot of your choice
+        <ul>
+            <a href="{% url 'show_skills' %}">Programming Languages bar graphs</a>
+            <li>Bargraphs of four user-entered programming languages</li>
+            <br> 
+            <br> 
+            <br>     
+        </ul>
+    </p>
+    <br> 
+
+         How to join this project
+    </h5>
+    <p >
+         This is a not-for-profit open-source project. <a href="https://github.com/adikele/covidplots-using-django">https://github.com/adikele/covidplots-using-django</a>
+        <br> Would you like to contribute? Do you have suggestions? Please write to me at adityakelekar@yahoo.com
+    </p>
+{% endblock %}

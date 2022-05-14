@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<br> 
+<br> 
+<h5>   Skills Bargraphs      </h5>
+<br> 
+<br> 
+<h3 > Create a bargraph for your programming languages skills! </h3>
+<h5 > Choose four programming languages and select your corresponding skill level. </h5>
+<br> 
+<br> 
+    <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </form>
+    </table>
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}
