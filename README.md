@@ -5,7 +5,7 @@ Plots bargraphs of a user's language proficiency levels for user-selected langua
 The project website can be found at: https://skills-bar.lm.r.appspot.com/
 
 An example of a bargraph plot:
-![An example of a linegraph plot using the 'Spread of Infections in Countries' link](https://github.com/adikele/covidplots-using-django/blob/master/SweChiIndia.png)
+![An example of a bargraph plot](https://github.com/adikele/skills-bar-graphs/blob/master/SkillsBarsBajya.png)
 
 ### Structure:
 The backend is a RESTful API application built with Django.
