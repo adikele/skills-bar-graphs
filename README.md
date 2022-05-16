@@ -1,7 +1,7 @@
 Last Updated: 16th May 2022
 
 # skills-bar-graphs
-Plots bargraphs of a user's language proficiency for user-selected languages.
+Plots bargraphs of a user's language proficiency levels for user-selected languages.<br/>
 The project website can be found at: https://skills-bar.lm.r.appspot.com/
 
 An example of a bargraph plot:
@@ -10,7 +10,7 @@ An example of a bargraph plot:
 ### Structure:
 The backend is a RESTful API application built with Django.
 The data source for the available languages in the dropdown list is a dictionary listing some of the most common languages in the world.
-The bargraphs for plotting a user's levels are drawn using the Plotly library.
+The bargraphs for plotting a user's language proficiency levels are drawn using the Plotly library.
 
 
 ### Running this project:
