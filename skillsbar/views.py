@@ -1,12 +1,7 @@
-import pandas as pd
 import django
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
 from django.shortcuts import render, redirect, get_object_or_404
-
 from .forms import SkillsSelectForm
-
-from .utilities import *  # not used
+#from .utilities import *  # not used
 import random
 from datetime import date
 from plotly.offline import plot
@@ -48,17 +43,17 @@ def show_skills(request):
             fig = go.Figure()
             colour_list = [
                 "rgb(26, 118, 255)",
-                "rgb(204, 204, 205)",
-                "rgb(255, 100, 100)",
+                "rgb(100, 100, 255)",
                 "rgb(100, 255, 100)",
+                "rgb(255, 100, 100)",
             ]
             today = date.today()
             fig.add_trace(
                 go.Bar(
                     x=skill_names,
                     y=[40, 40, 40],
-                    name="Beginner level",
-                    marker_color="rgb(55, 83, 109)",
+                    name="Beginner Learner",
+                    marker_color="rgb(211, 211, 211)",  #light gray
                 )
             )
 
@@ -70,26 +65,35 @@ def show_skills(request):
                         plotting_level_skill2,
                         plotting_level_skill3,
                     ],
-                    name=plotting_name + "'s skill level",
+                    name=plotting_name,
                     marker_color=random.choice(colour_list),
                 )
             )
 
             fig.update_layout(
-                title=f"Self-evaluation of {plotting_name}'s skills dt:{today}. Chart is done using Python's Plotly library",
-                xaxis_tickfont_size=14,
+                autosize=False,   #new
+                width=1000,   #new
+                height=500,  #new
+                margin=dict(
+                        l=250,  #orig 50
+                        r=50,
+                        b=100,
+                        t=100,
+                        pad=4
+                ),
+                title=f"Self-evaluation of {plotting_name}'s language skills, dated: {today}",
+                xaxis_tickfont_size=14,  #orig 14
                 yaxis=dict(
-                    title="Skill level",
+                    title="Language proficiency level",
                     titlefont_size=16,
                     tickfont_size=14,
                 ),
                 legend=dict(
-                    yanchor="top",
-                    y=0.99,
-                    xanchor="left",
-                    x=0.01,
-                    bgcolor="rgba(255, 255, 255, 0)",
-                    bordercolor="rgba(255, 255, 255, 0)",
+                    x=-1.0,  #orig 0, with x = -1, more space for legend
+                    y=1.0,
+                    bgcolor='rgba(255, 255, 255, 0)',
+                    bordercolor='rgba(255, 255, 255, 0)',
+                    xanchor="right",
                 ),
                 barmode="group",
                 bargap=0.15,  # gap between bars of adjacent location coordinates.
@@ -100,8 +104,8 @@ def show_skills(request):
                 "title": "Title of the figure",
                 "xaxis_title": "X",
                 "yaxis_title": "Y",
-                "height": 420,
-                "width": 560,
+                "height": 820,  #orig 420
+                "width": 400,  #orig 560
             }
 
             plot_div = plot({"data": fig, "layout": layout}, output_type="div")
