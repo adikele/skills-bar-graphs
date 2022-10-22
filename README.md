@@ -37,6 +37,12 @@ Step 4: Start the server to view the pages
 python manage.py runserver
 ```
 
+Additionally if you make changes to React code you need to run following command to create bundled files for Django
+
+```
+npm run dev
+```
+
 ### To Do: 
 1. Create the option for the user to add languages of his/her choice.
 2. Create the option for the user to decide how many languages to display for the bargraphs.
