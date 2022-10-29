@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
        # Add our new application
     'skillsbar.apps.SkillsbarConfig',
+    'crosswalkgallery',
 ]
 
 MIDDLEWARE = [
