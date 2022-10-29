@@ -139,6 +139,16 @@ class SkillsSelectForm(forms.Form):
         label="Level - skill 3:", widget=forms.Select(choices=list_levels_processed)
     )
 
+    # trying to add a fourth entry field
+    selected_skill4 = forms.CharField(
+        label="Select skill 4:",
+        initial="Finnish",
+        widget=forms.Select(choices=list_lang_processed),
+    )
+    selected_level_skill4 = forms.CharField(
+        label="Level - skill 4:", widget=forms.Select(choices=list_levels_processed)
+    )
+
     name = forms.CharField(label="Your name")
 
 
