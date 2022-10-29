@@ -26,7 +26,21 @@ source skills-venv/bin/activate
 git clone https://github.com/adikele/skills-bar-graphs
 cd skills-bar-graphs
 pip install -r requirements.txt
+```
+Step 3: You also need support for React pages served from Django templates
+```
+sudo apt install nodejs npm
+npm install
+```
+Step 4: Start the server to view the pages
+```
 python manage.py runserver
+```
+
+Additionally if you make changes to React code you need to run following command to create bundled files for Django
+
+```
+npm run dev
 ```
 
 ### To Do: 
